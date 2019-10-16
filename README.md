@@ -1,23 +1,27 @@
-# openid-connect-consumerhealth-profile
-This is an OpenID Connect Profile outlining additional infomation that should be contained 
-in the the `id_token` to facilitate healthcare and related identity logistics.  This Profile is at the inception stage
+# openid-connect-consumerhealth-profile(CHP) - DRAFT
+This is an OpenID Connect Profile outlining to facilitate healthcare and patient-centered data exhange.
 
-It profiles the following existing claims:
+**CHP** profiles new and existing claims to be contained within the `id_token`.  These new claims are broken into two sections; **Required** and **Optional**.
 
-* `document` - To many types of identifiers with related metadata such as URL. Storing FHIR Patient IDs is part of this profile.
+
+Required
+--------
+
+Knowing an individual's level of identyity assurance and authenticator assurance is a key peice systems (relying parties) need in order make informed decisions on which actions are appropriate for a given user.
+
+* `ial` - To encode Identity Assurance  Assurance Level (`1`,`2`, or `3`). https://pages.nist.gov/800-63-3/sp800-63a.html
+* `aal` - To encode Authenticator Assurance Level (`1`,`2`, or `3`). https://pages.nist.gov/800-63-3/sp800-63a.html
+
+
+Optional
+--------
+
+* `document` - This profile extends the iGov OIDC `doc` claim for documents.https://openid.net/specs/openid-igov-openid-connect-1_0-ID1.html#ClaimsResponse. The extension allows additional metadata to be added to fields including codes for `country`, `subdivision` (e.g. state), `url`. The helps better codify state issued documents such as a driver's license. In addition Patient identifiers in various systems may be stored. For example a FHIR Patient ID along with the URL to the FHIR server to which it pertains may be stores withjin the `doc` claim.
 * `address` - To define additional metadata around addresses.
-* `gender` - To disamiguate from the definition of `gender_identity` in this OIDC profile.
-
-It extends the following new / emerging claims.
-
-* `aal` - To encode Authenticaotr Assurance Level
-* `verified_person_data` - To encode Identity assurace Level (e.g. ID check of license, etc.)
-* `membership`   To encode linking a person receiving services with an organization (e.g. A communuity-based-organization or insurance provider.)
-* `organizational_agent` - To encode  linking a person who works for (or is an agent of) an organization with said organization.
 * `middle_name` - To encode a middle name for aiding with patient linking and matching when no unique identifer (e.g. social security number) is known. (national identity)
-* `gender_identity` - To disamiguate from the definition of `gender` in OIDC.
-* `emergency_contact` - To encode a person's emergency contacts.
-
-
-
-#TODO Add some `id_token` example claims.
+* `sex` - A field to indicate biological/birth sex.  Values include `male`, `female`, and `other`.
+* `gender_identity_custom_value` - A free text to hold gender identity description.
+* `verified_claims` - Optional and as per specification.To encode Identity assurace Level (e.g. ID check of license, etc.)
+* `membership` - To encode links between a person receiving services with an organization (e.g. a communuity-based-organization or insurance provider.)
+* `organizational_agent` - To encode linking a person who works for (or is an agent of) an organization with said organization.
+* `person_to_person` - To encode links between individuals (e.g. emergency contact, primary physician, parent, child, spouse, etc.)
