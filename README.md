@@ -20,8 +20,4 @@ Optional
 * `address` - To define additional metadata around addresses.
 * `middle_name` - To encode a middle name for aiding with patient linking and matching when no unique identifer (e.g. social security number) is known. (national identity)
 * `sex` - A field to indicate biological/birth sex.  Values include `male`, `female`, and `other`.
-* `gender_identity_custom_value` - A free text to hold gender identity description.
 * `verified_claims` - Optional and as per specification.To encode Identity assurace Level (e.g. ID check of license, etc.)
-* `membership` - To encode links between a person receiving services with an organization (e.g. a communuity-based-organization or insurance provider.)
-* `organizational_agent` - To encode linking a person who works for (or is an agent of) an organization with said organization.
-* `person_to_person` - To encode links between individuals (e.g. emergency contact, primary physician, parent, child, spouse, etc.)
