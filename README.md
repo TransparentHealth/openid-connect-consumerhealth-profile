@@ -1,6 +1,9 @@
-# openid-connect-consumerhealth-profile(CHP) - DRAFT
+# openid-connect-consumerhealth-profile - DRAFT
 
 This is an OpenID Connect Profile outlining to facilitate healthcare and patient-centered data exchange.
+
+
+This is a draft. Please comment using issues feature or make a pull request.
 
 **CHP** profile outlines claims (i.e. fields) to be contained within the `id_token`.  Claims are broken into two sections; **Required** and **Optional**.
 
