@@ -26,3 +26,79 @@ Optional
 *`middle_name` - To encode a middle name for aiding with patient linking and matching when no unique identifier (e.g. social security number) is known. (national identity)
 
 * `sex` - A field to indicate biological/birth sex.  Values are `male`, `female`, and `other`.
+
+
+Example Token
+-------------
+
+
+Below is a sample of content in the `is_token`'s payload.
+
+
+    {
+    "aud": "sharemyhealth@verifymyidentity",
+    "auth_time": 1573568084.385469,
+    "email": "james@example.com",
+    "exp": 1573571700.0725582,
+    "iat": 1573568100.07256,
+    "iss": "http://verifymyidentity:8000",
+    "nonce": "xc1bl2q8nfHZvxqPBo9C7ThuPTCHw8lEI2CbDWM2kUISaPBYQX56ocJFEznLdX1X",
+    "sub": "130468531371930",
+    "birthdate": "1975-10-12",
+    "email_verified": false,
+    "family_name": "Kirk",
+    "given_name": "James",
+    "middle_name": "",
+    "name": "James Kirk",
+    "nickname": "CAPTIAN",
+    "phone_number": "+13046853137",
+    "phone_verified": false,
+    "picture": "https://example.com/media/profile-picture/alan_IMGIEON.jpg",
+    "preferred_username": "james",
+    "sex": "male",
+    "vot": "Ab.P2.C2",
+    "website": "",
+    "address": [
+        {
+            "formatted": "811 9th St. Suite 120-309\nDurham, NC 27705",
+            "street_address": "811 9th St. Suite 120-309",
+            "locality": "Durham",
+            "region": "NC",
+            "postal_code": "27705",
+            "country": ""
+        }
+    ],
+
+    "memberships": [ ],
+    "verified_claims": [
+        {
+            "verification": {
+                "trust_framework": "nist_800_63A_ial_2",
+                "time": "2019-11-08 16:50:06.252483+00:00",
+                "evidence": [
+                    {
+                        "type": "id_document",
+                        "method": "pipp",
+                        "document": {
+                            "type": "idcard",
+                            "issuer": {
+                                "name": "State of North Carolina",
+                                "country": "US",
+                                "region": "NC"
+                            },
+                            "number": "1234567",
+                            "date_of_issuance": "2019-11-07",
+                            "date_of_expiry": "2029-11-07"
+                        }
+                    }
+                ],
+                "claims": {
+                    "given_name": "JAMES",
+                    "family_name": "KIRK",
+                    "birthdate": "1975-10-12"
+                }
+            }
+        }
+        }
+    ]
+    }
