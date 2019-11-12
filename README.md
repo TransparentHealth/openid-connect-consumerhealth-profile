@@ -26,7 +26,7 @@ Optional
 
 * `verified_claims` - Optional and as per specification. To encode Identity assurance Level (e.g. ID check of license, etc.)
 
-*`middle_name` - To encode a middle name for aiding with patient linking and matching when no unique identifier (e.g. social security number) is known. (national identity)
+* `middle_name` - To encode a middle name for aiding with patient linking and matching when no unique identifier (e.g. social security number) is known. (national identity)
 
 * `sex` - A field to indicate biological/birth sex.  Values are `male`, `female`, and `other`.
 
