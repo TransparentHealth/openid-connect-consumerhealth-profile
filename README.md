@@ -15,7 +15,8 @@ Knowing an individual's level of identyity assurance and authenticator assurance
 
 * `vot` - To  encode Identity Assurance  Assurance Level (`1`,`2`, or `3`) and  Authenticator Assurance Level (`1`,`2`, or `3`).  This profile requires that a numerical value for `P` and `C` are set.  (`P0`, `P1`, `P2`, `P3`, `C1`,` C2`, `C3`).  All other `vot` data is optional.
 
-The details for the NIST 800-63-3 to `vot` mapping can be found here: https://github.com/TransparentHealth/800-63-3/blob/nist-pages/sp800-63d/vot-mapping-consumer-health.md
+* `vtm` - To reference the  specific set of vector values as defined by NIST 800-63-3.  The value of the `vtm`  claim shall be `https://github.com/TransparentHealth/800-63-3-trustmark/`.
+
 
 
 
@@ -44,23 +45,23 @@ Below is a sample of content in the `is_token`'s payload.
     "email": "james@example.com",
     "exp": 1573571700.0725582,
     "iat": 1573568100.07256,
-    "iss": "http://verifymyidentity:8000",
+    "iss": "https://oidc.example.com",
     "nonce": "xc1bl2q8nfHZvxqPBo9C7ThuPTCHw8lEI2CbDWM2kUISaPBYQX56ocJFEznLdX1X",
     "sub": "130468531371930",
     "birthdate": "1975-10-12",
     "email_verified": false,
     "family_name": "Kirk",
     "given_name": "James",
-    "middle_name": "",
+    "middle_name": "Tiberius",
     "name": "James Kirk",
-    "nickname": "CAPTIAN",
-    "phone_number": "+13046853137",
+    "nickname": "Captian",
+    "phone_number": "+15555555555",
     "phone_verified": false,
-    "picture": "https://example.com/media/profile-picture/alan_IMGIEON.jpg",
+    "picture": "https://oidcexample.com/media/profile-picture/james-kirk.jpg",
     "preferred_username": "james",
     "sex": "male",
     "vot": "Ab.P2.C2",
-    "website": "",
+    "vtm": "https://github.com/TransparentHealth/800-63-3-trustmark/"",
     "address": [
         {
             "formatted": "811 9th St. Suite 120-309\nDurham, NC 27705",
