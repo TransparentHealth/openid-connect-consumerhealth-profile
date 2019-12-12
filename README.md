@@ -8,8 +8,10 @@ This is an OpenID Connect profile which outlines specific content of the `id_tok
 
 This is a draft. Please contribute by using issues feature or make a pull request.
 
-The **CHOP** profile outlines claims (i.e. fields) to be contained within the `id_token`.  Claims are broken into two sections; **Required** and **Optional**.
+The **CHOP** profile outlines claims (i.e. fields) to be contained within the `id_token`.
 
+
+_Note_: In the context of identity, the word "claim" is referring to fields in the `id_toekn`.  The meaning in this context is unrelated to the meaning of the word claim in a healthcare context.
 
 Fields / Claims
 ---------------
