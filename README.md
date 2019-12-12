@@ -54,7 +54,7 @@ Example Token
 -------------
 
 
-Below is a sample of content in the `is_token` doe James Kirk.  Important information about James Kirk is provided to the replying party , Including:
+Below is a sample of content in the `is_token` for James Kirk.  Important information about James Kirk is provided to the replying party , Including:
 
 * James' identity has been verified to IAL2.
 * James' demographic information including his middle name birthdate and sex.
