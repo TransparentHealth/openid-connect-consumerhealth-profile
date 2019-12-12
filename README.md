@@ -1,11 +1,11 @@
-# openid-connect-consumerhealth-profile (OCHP) - DRAFT
+# Consumer Health Profile for OpenID Connect (CHOP) - DRAFT
 
 This is an OpenID Connect Profile outlining to facilitate healthcare and patient-centered data exchange.
 
 
 This is a draft. Please comment using issues feature or make a pull request.
 
-The **OCHP** profile outlines claims (i.e. fields) to be contained within the `id_token`.  Claims are broken into two sections; **Required** and **Optional**.
+The **CHOP** profile outlines claims (i.e. fields) to be contained within the `id_token`.  Claims are broken into two sections; **Required** and **Optional**.
 
 
 Required
