@@ -96,7 +96,7 @@ Payload of `id_token`:
  		"postal_code": "27705",
  		"country": ""
  	}],
- 	"member_to_organizations": [{
+ 	"member_to_organization": [{
  			"name": "NC Medicaid",
  			"slug": "nc-medicaid",
  			"relationship_type": "Primary Medial Insurance",
