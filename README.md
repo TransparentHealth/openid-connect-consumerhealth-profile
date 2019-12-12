@@ -59,8 +59,10 @@ Below is a sample of content in the `is_token` doe James Kirk.  Important inform
 * James has an insurance plan with NC Medicaid.
 * James is receiving services from ACME Health.
 * James has given his spouse, Alice, read access to his medical records.
-* James' care coordinator is Carol Capenter, of ACEM Health.
+* James' care coordinator is Carol Capenter, of ACMW Health.
 
+
+Payload of `id_token`:
 
 
     {
