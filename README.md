@@ -1,35 +1,55 @@
-# Consumer Health Profile for OpenID Connect (CHOP) - DRAFT
+# Consumer Health OpenID Connect Profile(CHOP) - DRAFT
 
-This is an OpenID Connect Profile outlining to facilitate healthcare and patient-centered data exchange.
+This is an OpenID Connect profile which outlines specific content of the `id_token`. It is designed to adress logistical issues surrounding access to health information. The goals of this profile are:
 
+1. To communicate digital identity information in a consistent fashion.
+2. To provide a consistent way represent identifiers, which often act as pointers to health information. 
+3. To provide a consistent way to model relationships among people and organizations.
 
-This is a draft. Please comment using issues feature or make a pull request.
+This is a draft. Please contribute by using issues feature or make a pull request.
 
 The **CHOP** profile outlines claims (i.e. fields) to be contained within the `id_token`.  Claims are broken into two sections; **Required** and **Optional**.
 
 
-Required
---------
+Fields / Claims
+---------------
 
-Knowing an individual's level of identyity assurance and authenticator assurance is a key peice systems (relying parties) need in order make informed decisions on which actions are appropriate for a given user.
+This section profiles's fields individualy.
+
+
+Goal 1: Digitial Identity Information
+_____________________________________
 
 * `vot` - To  encode Identity Assurance  Assurance Level (`1`,`2`, or `3`) and  Authenticator Assurance Level (`1`,`2`, or `3`).  This profile requires that a numerical value for `P` and `C` are set.  (`P0`, `P1`, `P2`, `P3`, `C1`,` C2`, `C3`).  All other `vot` data is optional.
 
 * `vtm` - To reference the  specific set of vector values as defined by NIST 800-63-3.  The value of the `vtm`  claim shall be `https://github.com/TransparentHealth/800-63-3-trustmark/`.
 
+* `verified_claims` - To provide details on the id verification event, if needed. (e.g. Details on a drivers's license may be stored here.)
 
+Goal 2: Identifiers
+___________________
 
-
-Optional
---------
 
 * `document` - This profile extends the iGov OIDC `doc` claim for documents.https://openid.net/specs/openid-igov-openid-connect-1_0-ID1.html#ClaimsResponse and should help facilitate patient linking and matching. The extension allows additional metadata to be added to fields including codes for `country`, `subdivision` (e.g. state), `url`. The helps better codify state issued documents such as a driver's license. In addition, Patient identifiers in various systems may be stored. For example, a FHIR Patient ID along with the URL to the FHIR server to which it pertains may be stores within the `doc` claim.
 
-* `verified_claims` - Optional and as per specification. To encode Identity assurance Level (e.g. ID check of license, etc.)
+Goal 3: Relationships
+_____________________
+
+* `agent-to-organization` - For employment relationships. Example: Bob works for ACME Health
+* `member-to-organization` - For membership/client/patient relationships. Examples: Bob has insurance through ACME Health. Carol is a client of City Mission. Carlos is patient at Capitol Clinic.  
+* `member-to-member` - For family relationships. Examples: Carlos is the spouse of Carol. Frank wants Eve to have access to his records. 
+* `agent-to-member` - For Patient/provider relationships. Examples:  Bob, of ACME Health, is the care coordinator for Alice.  Charlie, of City Mission, is the primary point of contact for Frank. 
+
+Other Claims:
+____________
+
+
 
 * `middle_name` - To encode a middle name for aiding with patient linking and matching when no unique identifier (e.g. social security number) is known. (national identity)
 
 * `sex` - A field to indicate biological/birth sex.  Values are `male`, `female`, and `other`.
+
+
 
 
 Example Token
