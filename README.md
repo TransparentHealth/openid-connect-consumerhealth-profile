@@ -66,114 +66,103 @@ Payload of `id_token`:
 
 
     {
-    "aud": "sharemyhealth@verifymyidentity",
-    "auth_time": 1573568084.385469,
-    "email": "james@example.com",
-    "exp": 1573571700.0725582,
-    "iat": 1573568100.07256,
-    "iss": "https://oidc.example.com",
-    "nonce": "xc1bl2q8nfHZvxqPBo9C7ThuPTCHw8lEI2CbDWM2kUISaPBYQX57ocJFEznLdX1X",
-    "sub": "130468531371930",
-    "birthdate": "1975-10-12",
-    "email_verified": false,
-    "family_name": "Kirk",
-    "given_name": "James",
-    "middle_name": "Tiberius",
-    "name": "James Kirk",
-    "nickname": "Captian",
-    "phone_number": "+15555555555",
-    "phone_verified": false,
-    "picture": "https://oidc.example.com/media/profile-picture/james-kirk.jpg",
-    "preferred_username": "james",
-    "sex": "male",
-    "vot": "Ab.P2.C2",
-    "vtm": "https://github.com/TransparentHealth/800-63-3-trustmark/"",
-    "address": [
-        {
-            "formatted": "811 9th St. Suite 120-309\nDurham, NC 27705",
-            "street_address": "811 9th St. Suite 120-309",
-            "locality": "Durham",
-            "region": "NC",
-            "postal_code": "27705",
-            "country": ""
-        }
-    ],
-    "member_to_organizations": [ 
-       {
-        "name": "NC Medicaid",
-        "slug": "nc-medicaid",
-        "relationship_type": "Primary Medial Insurance",
-        "sub": "270687240429810",
-        "picture": "https://oidc.example.com/media/org-picture/nc-mediciad.jpg",
-        "website": "https://medicaid.ncdhhs.gov",
-        "phone_number": "+15555559999",
-        "scope": "profile user/*.*"
-    },
-    {
-        "name": "ACME Health",
-        "slug": "acme-health",
-        "relationship_type": "Recipient of services form a community-based organization",
-        "sub": "260687240429810",
-        "picture": "https://oidc.example.com/media/org-picture/acme.jpg",
-        "website": "http://acme.example.com",
-        "phone_number": "+155555555555",
-        "scope": "profile user/*.read"
-    }
-    ],
-    "member_to_member": [
-    {
-        "name": "Alice Alders",
-        "sub": "160687240429810",
-        "picture":  "https://oidc.example.com/media/profile-picture/alice.jpg",
-        "phone_number": "+155555551234",
-        "relationship": "spouse",
-        "scope": "profile user/*.read"
-    }
-    ],
-    "agent_to_member": [
-    {
-        "name": "Carol Capenter",
-        "sub": "190688250429811",
-        "picture":  "https://oidc.example.com/media/profile-picture/alice.jpg",
-        "phone_number": "+155555558894",
-        "relationship": "Care coordinator",
-        "scope": "profile user/*.*",
-        "organization":{
-            "name": "ACME Health",
-            "slug": "acme-health",
-           "sub": "260687240429810"
-        }
-    ],  
-    
-    "verified_claims": [
-        {
-            "verification": {
-                "trust_framework": "nist_800_63A_ial_2",
-                "time": "2019-11-08 16:50:06.252483+00:00",
-                "evidence": [
-                    {
-                        "type": "id_document",
-                        "method": "pipp",
-                        "document": {
-                            "type": "idcard",
-                            "issuer": {
-                                "name": "State of North Carolina",
-                                "country": "US",
-                                "region": "NC"
-                            },
-                            "number": "1234567",
-                            "date_of_issuance": "2019-11-07",
-                            "date_of_expiry": "2029-11-07"
-                        }
-                    }
-                ],
-                "claims": {
-                    "given_name": "JAMES",
-                    "family_name": "KIRK",
-                    "birthdate": "1975-10-12"
-                }
-            }
-        }
-        }
-    ]
+ 	"aud": "sharemyhealth@verifymyidentity",
+ 	"auth_time": 1573568084.385469,
+ 	"email": "james@example.com",
+ 	"exp": 1573571700.0725582,
+ 	"iat": 1573568100.07256,
+ 	"iss": "https://oidc.example.com",
+ 	"nonce": "xc1bl2q8nfHZvxqPBo9C7ThuPTCHw8lEI2CbDWM2kUISaPBYQX57ocJFEznLdX1X",
+ 	"sub": "130468531371930",
+ 	"birthdate": "1975-10-12",
+ 	"email_verified": false,
+ 	"family_name": "Kirk",
+ 	"given_name": "James",
+ 	"middle_name": "Tiberius",
+ 	"name": "James Kirk",
+ 	"nickname": "Captian",
+ 	"phone_number": "+15555555555",
+ 	"phone_verified": false,
+ 	"picture": "https://oidc.example.com/media/profile-picture/james-kirk.jpg",
+ 	"preferred_username": "james",
+ 	"sex": "male",
+ 	"vot": "Ab.P2.C2",
+ 	"vtm": "https://github.com/TransparentHealth/800-63-3-trustmark/",
+ 	"address": [{
+ 		"formatted": "811 9th St. Suite 120-309\nDurham, NC 27705",
+ 		"street_address": "811 9th St. Suite 120-309",
+ 		"locality": "Durham",
+ 		"region": "NC",
+ 		"postal_code": "27705",
+ 		"country": ""
+ 	}],
+ 	"member_to_organizations": [{
+ 			"name": "NC Medicaid",
+ 			"slug": "nc-medicaid",
+ 			"relationship_type": "Primary Medial Insurance",
+ 			"sub": "270687240429810",
+ 			"picture": "https://oidc.example.com/media/org-picture/nc-mediciad.jpg",
+ 			"website": "https://medicaid.ncdhhs.gov",
+ 			"phone_number": "+15555559999",
+ 			"scope": "profile user/*.*"
+ 		},
+ 		{
+ 			"name": "ACME Health",
+ 			"slug": "acme-health",
+ 			"relationship_type": "Recipient of services form a community-based organization",
+ 			"sub": "260687240429810",
+ 			"picture": "https://oidc.example.com/media/org-picture/acme.jpg",
+ 			"website": "http://acme.example.com",
+ 			"phone_number": "+155555555555",
+ 			"scope": "profile user/*.read"
+ 		}
+ 	],
+ 	"member_to_member": [{
+ 		"name": "Alice Alders",
+ 		"sub": "160687240429810",
+ 		"picture": "https://oidc.example.com/media/profile-picture/alice.jpg",
+ 		"phone_number": "+155555551234",
+ 		"relationship": "spouse",
+ 		"scope": "profile user/*.read"
+ 	}],
+ 	"agent_to_member": [{
+ 		"name": "Carol Capenter",
+ 		"sub": "190688250429811",
+ 		"picture": "https://oidc.example.com/media/profile-picture/alice.jpg",
+ 		"phone_number": "+155555558894",
+ 		"relationship": "Care coordinator",
+ 		"scope": "profile user/*.*",
+ 		"organization": {
+ 			"name": "ACME Health",
+ 			"slug": "acme-health",
+ 			"sub": "260687240429810"
+ 		}
+ 	}],
+ 	"verified_claims": [{
+ 		"verification": {
+ 			"trust_framework": "nist_800_63A_ial_2",
+ 			"time": "2019-11-08 16:50:06.252483+00:00",
+ 			"evidence": [{
+ 				"type": "id_document",
+ 				"method": "pipp",
+ 				"document": {
+ 					"type": "idcard",
+ 					"issuer": {
+ 						"name": "State of North Carolina",
+ 						"country": "US",
+ 						"region": "NC"
+ 					},
+ 					"number": "1234567",
+ 					"date_of_issuance": "2019-11-07",
+ 					"date_of_expiry": "2029-11-07"
+ 				}
+ 			}],
+ 			"claims": {
+ 				"given_name": "JAMES",
+ 				"family_name": "KIRK",
+ 				"birthdate": "1975-10-12"
+ 			}
+ 		}
+
+ 	}]
     }
