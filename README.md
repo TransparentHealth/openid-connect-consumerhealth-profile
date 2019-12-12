@@ -11,7 +11,7 @@ This is a draft. Please contribute by using issues feature or make a pull reques
 The **CHOP** profile outlines claims (i.e. fields) to be contained within the `id_token`.
 
 
-**Note**: In the context of identity, the word "claim" is referring to fields in the `id_token`.  The meaning of "claim" in this context is unrelated to the meaning of the word "claim" in a healthcare context.
+**Note**: In the context of identity, the word "claim" is referring to any given field in the `id_token`.  The meaning of "claim" in this context is unrelated to the meaning of the word "claim" in a healthcare context.
 
 Fields / Claims
 ---------------
