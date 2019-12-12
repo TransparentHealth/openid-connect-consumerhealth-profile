@@ -1,6 +1,6 @@
 # Consumer Health OpenID Connect Profile(CHOP) - DRAFT
 
-This is an OpenID Connect profile which outlines specific content of the `id_token`. It is designed to adress logistical issues surrounding access to health information. The goals of this profile are:
+This is an OpenID Connect profile which outlines specific content of the `id_token`. It is designed to address logistical issues surrounding access to health information. The goals of this profile are:
 
 1. To communicate digital identity information in a consistent fashion.
 2. To provide a consistent way represent identifiers, which often act as pointers to health information. 
@@ -14,17 +14,17 @@ The **CHOP** profile outlines claims (i.e. fields) to be contained within the `i
 Fields / Claims
 ---------------
 
-This section profiles's fields individualy.
+This section profile’s fields individually.
 
 
-Goal 1: Digitial Identity Information
-_____________________________________
+Goal 1: Digitial Identity
+________________________
 
-* `vot` - To  encode Identity Assurance  Assurance Level (`1`,`2`, or `3`) and  Authenticator Assurance Level (`1`,`2`, or `3`).  This profile requires that a numerical value for `P` and `C` are set.  (`P0`, `P1`, `P2`, `P3`, `C1`,` C2`, `C3`).  All other `vot` data is optional.
+* `vot` - To  encode Identity Assurance Level (`1`,`2`, or `3`) and  Authenticator Assurance Level (`1`,`2`, or `3`).  This profile requires that a numerical value for `P` and `C` are set.  (`P0`, `P1`, `P2`, `P3`, `C1`,` C2`, `C3`).  All other `vot` data is optional.
 
 * `vtm` - To reference the  specific set of vector values as defined by NIST 800-63-3.  The value of the `vtm`  claim shall be `https://github.com/TransparentHealth/800-63-3-trustmark/`.
 
-* `verified_claims` - To provide details on the id verification event, if needed. (e.g. Details on a drivers's license may be stored here.)
+* `verified_claims` - To provide details on the id verification event, if needed. (e.g. Details on a driver's license may be stored here.)
 
 Goal 2: Identifiers
 ___________________
@@ -38,25 +38,28 @@ _____________________
 * `agent-to-organization` - For employment relationships. Example: Bob works for ACME Health
 * `member-to-organization` - For membership/client/patient relationships. Examples: Bob has insurance through ACME Health. Carol is a client of City Mission. Carlos is patient at Capitol Clinic.  
 * `member-to-member` - For family relationships. Examples: Carlos is the spouse of Carol. Frank wants Eve to have access to his records. 
-* `agent-to-member` - For Patient/provider relationships. Examples:  Bob, of ACME Health, is the care coordinator for Alice.  Charlie, of City Mission, is the primary point of contact for Frank. 
+* `agent-to-member` - For Patient/provider relationships. Examples:  Alice, of ACME Health, is the care coordinator for Alice.  Charlie, of City Mission, is the care coordinator for Frank. 
 
 Other Claims:
 ____________
-
-
 
 * `middle_name` - To encode a middle name for aiding with patient linking and matching when no unique identifier (e.g. social security number) is known. (national identity)
 
 * `sex` - A field to indicate biological/birth sex.  Values are `male`, `female`, and `other`.
 
 
-
-
 Example Token
 -------------
 
 
-Below is a sample of content in the `is_token`'s payload.
+Below is a sample of content in the `is_token` doe James Kirk.  Important information about James Kirk is provided to the replying party , Including:
+
+* James' identity has been verified to IAL2.
+* James' demographic information including his middle name birthdate and sex.
+* James has an insurance plan with NC Medicaid.
+* James is receiving services from ACME Health.
+* James has given his spouse, Alice, read access to his medical records.
+* James' care coordinator is Carol Capenter, of ACEM Health.
 
 
     {
@@ -92,11 +95,21 @@ Below is a sample of content in the `is_token`'s payload.
             "country": ""
         }
     ],
-
     "member_to_organizations": [ 
+       {
+        "name": "NC Medicaid",
+        "slug": "nc-medicaid",
+        "relationship_type": "Primary Medial Insurance",
+        "sub": "270687240429810",
+        "picture": "https://oidc.example.com/media/org-picture/nc-mediciad.jpg",
+        "website": "https://medicaid.ncdhhs.gov",
+        "phone_number": "+15555559999",
+        "scope": "profile user/*.*"
+    },
     {
         "name": "ACME Health",
         "slug": "acme-health",
+        "relationship_type": "Recipient of services form a community-based organization",
         "sub": "260687240429810",
         "picture": "https://oidc.example.com/media/org-picture/acme.jpg",
         "website": "http://acme.example.com",
@@ -108,12 +121,27 @@ Below is a sample of content in the `is_token`'s payload.
     {
         "name": "Alice Alders",
         "sub": "160687240429810",
-        "picture":  "https://oidc.example.com/media/profile-picture/alice.jpg",,
+        "picture":  "https://oidc.example.com/media/profile-picture/alice.jpg",
         "phone_number": "+155555551234",
         "relationship": "spouse",
         "scope": "profile user/*.read"
     }
     ],
+    "agent_to_member": [
+    {
+        "name": "Carol Capenter",
+        "sub": "190688250429811",
+        "picture":  "https://oidc.example.com/media/profile-picture/alice.jpg",
+        "phone_number": "+155555558894",
+        "relationship": "Care coordinator",
+        "scope": "profile user/*.*",
+        "organization":{
+            "name": "ACME Health",
+            "slug": "acme-health",
+           "sub": "260687240429810"
+        }
+    ],  
+    
     "verified_claims": [
         {
             "verification": {
