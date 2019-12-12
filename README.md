@@ -66,7 +66,7 @@ Below is a sample of content in the `is_token`'s payload.
     "exp": 1573571700.0725582,
     "iat": 1573568100.07256,
     "iss": "https://oidc.example.com",
-    "nonce": "xc1bl2q8nfHZvxqPBo9C7ThuPTCHw8lEI2CbDWM2kUISaPBYQX56ocJFEznLdX1X",
+    "nonce": "xc1bl2q8nfHZvxqPBo9C7ThuPTCHw8lEI2CbDWM2kUISaPBYQX57ocJFEznLdX1X",
     "sub": "130468531371930",
     "birthdate": "1975-10-12",
     "email_verified": false,
@@ -77,7 +77,7 @@ Below is a sample of content in the `is_token`'s payload.
     "nickname": "Captian",
     "phone_number": "+15555555555",
     "phone_verified": false,
-    "picture": "https://oidcexample.com/media/profile-picture/james-kirk.jpg",
+    "picture": "https://oidc.example.com/media/profile-picture/james-kirk.jpg",
     "preferred_username": "james",
     "sex": "male",
     "vot": "Ab.P2.C2",
@@ -93,7 +93,27 @@ Below is a sample of content in the `is_token`'s payload.
         }
     ],
 
-    "memberships": [ ],
+    "member_to_organizations": [ 
+    {
+        "name": "ACME Health",
+        "slug": "acme-health",
+        "sub": "260687240429810",
+        "picture": "https://oidc.example.com/media/org-picture/acme.jpg",
+        "website": "http://acme.example.com",
+        "phone_number": "+155555555555",
+        "scope": "profile user/*.read"
+    }
+    ],
+    "member_to_member": [
+    {
+        "name": "Alice Alders",
+        "sub": "160687240429810",
+        "picture":  "https://oidc.example.com/media/profile-picture/alice.jpg",,
+        "phone_number": "+155555551234",
+        "relationship": "spouse",
+        "scope": "profile user/*.read"
+    }
+    ],
     "verified_claims": [
         {
             "verification": {
