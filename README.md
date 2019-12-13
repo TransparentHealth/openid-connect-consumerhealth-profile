@@ -69,6 +69,7 @@ Payload of `id_token`:
 
 
     {
+    "sub": "130468531371930",
  	"aud": "sharemyhealth@verifymyidentity",
  	"auth_time": 1573568084.385469,
  	"email": "james@example.com",
@@ -76,7 +77,6 @@ Payload of `id_token`:
  	"iat": 1573568100.07256,
  	"iss": "https://oidc.example.com",
  	"nonce": "xc1bl2q8nfHZvxqPBo9C7ThuPTCHw8lEI2CbDWM2kUISaPBYQX57ocJFEznLdX1X",
- 	"sub": "130468531371930",
  	"birthdate": "2233-03-22",
  	"email_verified": false,
  	"family_name": "Kirk",
