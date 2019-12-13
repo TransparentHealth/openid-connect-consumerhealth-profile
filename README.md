@@ -57,11 +57,12 @@ Example Token
 Below is a sample of content in the `is_token` for James Kirk.  Important information about James Kirk is provided to the replying party , Including:
 
 * James' identity has been verified to IAL2.
-* James' demographic information including his middle name birthdate and sex.
+* James' middle name is Tiberius. His sex is male. He was both March 22, 2233.
+* James' NC state Mediciad ID is 123456789.
 * James has an insurance plan with NC Medicaid.
 * James is receiving services from ACME Health.
 * James has given his spouse, Alice, read access to his medical records.
-* James' care coordinator is Carol Capenter, of ACMW Health.
+* James' care coordinator is Carol Capenter, of ACME Health.
 
 
 Payload of `id_token`:
@@ -76,7 +77,7 @@ Payload of `id_token`:
  	"iss": "https://oidc.example.com",
  	"nonce": "xc1bl2q8nfHZvxqPBo9C7ThuPTCHw8lEI2CbDWM2kUISaPBYQX57ocJFEznLdX1X",
  	"sub": "130468531371930",
- 	"birthdate": "1975-10-12",
+ 	"birthdate": "2233-03-22",
  	"email_verified": false,
  	"family_name": "Kirk",
  	"given_name": "James",
@@ -90,7 +91,15 @@ Payload of `id_token`:
  	"sex": "male",
  	"vot": "Ab.P2.C2",
  	"vtm": "https://github.com/TransparentHealth/800-63-3-trustmark/",
- 	"address": [{
+ 	document": [{
+        "type": "MEDICAID_ID",
+        "num": "123456789",
+        "issuer": "dhhs.nc.gov",
+        "country": "US",
+        "subdivision": "NC",
+        "uri": "https://medicaid.ncdhhs.gov/medicaid"
+    }],
+    "address": [{
  		"formatted": "811 9th St. Suite 120-309\nDurham, NC 27705",
  		"street_address": "811 9th St. Suite 120-309",
  		"locality": "Durham",
