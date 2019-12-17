@@ -37,10 +37,10 @@ ___________________
 Goal 3: Relationships
 _____________________
 
-* `agent-to-organization` - For employment relationships. Example: Bob works for ACME Health
-* `member-to-organization` - For membership/client/patient relationships. Examples: Bob has insurance through ACME Health. Carol is a client of City Mission. Carlos is patient at Capitol Clinic.  
-* `member-to-member` - For family relationships. Examples: Carlos is the spouse of Carol. Frank wants Eve to have access to his records. 
-* `agent-to-member` - For Patient/provider relationships. Examples:  Alice, of ACME Health, is the care coordinator for Alice.  Charlie, of City Mission, is the care coordinator for Frank. 
+* `agent_to_organization` - For employment relationships. Example: Bob works for ACME Health
+* `member_to_organization` - For membership/client/patient relationships. Examples: Bob has insurance through ACME Health. Carol is a client of City Mission. Carlos is patient at Capitol Clinic.  
+* `member_to_member` - For family relationships. Examples: Carlos is the spouse of Carol. Frank wants Eve to have access to his records. 
+* `agent_to_member` - For Patient/provider relationships. Examples:  Alice, of ACME Health, is the care coordinator for Alice.  Charlie, of City Mission, is the care coordinator for Frank. 
 
 Other Claims:
 ____________
