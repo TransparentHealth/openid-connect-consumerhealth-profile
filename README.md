@@ -1,4 +1,4 @@
-# Consumer Health OpenID Connect Profile(CHOP) - DRAFT
+# Consumer Health OpenID Connect Profile (CHOP) - DRAFT
 
 This is an OpenID Connect profile which outlines specific content of the `id_token`. It is designed to address logistical issues surrounding access to health information. The goals of this profile are:
 
