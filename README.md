@@ -38,9 +38,9 @@ Goal 3: Relationships
 _____________________
 
 * `agent_to_organization` - For employment relationships. Example: Bob works for ACME Health
-* `member_to_organization` - For membership/client/patient relationships. Examples: Bob has insurance through ACME Health. Carol is a client of City Mission. Carlos is patient at Capitol Clinic.  
-* `member_to_member` - For family relationships. Examples: Carlos is the spouse of Carol. Frank wants Eve to have access to his records. 
-* `agent_to_member` - For Patient/provider relationships. Examples:  Alice, of ACME Health, is the care coordinator for Alice.  Charlie, of City Mission, is the care coordinator for Frank. 
+* `person_to_organization` - For membership/client/patient relationships. Examples: Bob has insurance through ACME Health. Carol is a client of City Mission. Carlos is patient at Capitol Clinic.  
+* `person_to_person` - For family relationships. Examples: Carlos is the spouse of Carol. Frank wants Eve to have access to his records. 
+* `agent_to_person` - For Patient/provider relationships. Examples:  Alice, of ACME Health, is the care coordinator for Alice.  Charlie, of City Mission, is the care coordinator for Frank. 
 
 Other Claims:
 ____________
@@ -50,11 +50,11 @@ ____________
 * `sex` - A field to indicate biological/birth sex.  Values are `male`, `female`, and `other`.
 
 
-Example Token
--------------
+Example Content
+---------------
 
 
-Below is a sample of content in the `is_token` for James Kirk.  Important information about James Kirk is provided to the replying party , Including:
+Tha sample content could be in the `id_token` for James Kirk or the JSON response to an aPI  Important information about James Kirk is provided to the relying party.  This includes the following:
 
 * James' identity has been verified to IAL2.
 * James' middle name is Tiberius. His sex is male. He was both March 22, 2233.
@@ -107,7 +107,7 @@ Payload of `id_token`:
  		"postal_code": "27705",
  		"country": ""
  	}],
- 	"member_to_organization": [{
+ 	"person_to_organization": [{
  			"name": "NC Medicaid",
  			"slug": "nc-medicaid",
  			"relationship_type": "Primary Medial Insurance",
@@ -128,7 +128,7 @@ Payload of `id_token`:
  			"scope": "profile user/*.read"
  		}
  	],
- 	"member_to_member": [{
+ 	"person_to_person": [{
  		"name": "Alice Alders",
  		"sub": "160687240429810",
  		"picture": "https://oidc.example.com/media/profile-picture/alice.jpg",
@@ -136,7 +136,7 @@ Payload of `id_token`:
  		"relationship": "spouse",
  		"scope": "profile user/*.read"
  	}],
- 	"agent_to_member": [{
+ 	"agent_to_person": [{
  		"name": "Carol Capenter",
  		"sub": "190688250429811",
  		"picture": "https://oidc.example.com/media/profile-picture/alice.jpg",
