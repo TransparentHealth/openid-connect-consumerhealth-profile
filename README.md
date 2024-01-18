@@ -91,7 +91,7 @@ Payload of `id_token`:
  	"picture": "https://oidc.example.com/media/profile-picture/james-kirk.jpg",
  	"preferred_username": "james",
  	"sex": "male",
- 	"vot": "Ab.P2.C2",
+ 	"vot": "A2.P2.C2",
  	"vtm": "https://github.com/TransparentHealth/800-63-3-trustmark/",
  	document": [{
         "type": "MEDICAID_ID",
